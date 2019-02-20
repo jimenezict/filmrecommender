@@ -1,7 +1,8 @@
 import pandas as pd
+import constant
 
-ratingsfilename='training_ratings_for_kaggle_comp.csv'
-numrows = 5000
+ratingsfilename=constant.RATING_FILE
+numrows = 500
 
 def __readfile(name, numrows):
     return pd.read_csv(name, nrows=numrows, index_col='id')
@@ -42,6 +43,13 @@ def __matchingCountFilmsByUser(df_l, user):
             retarray.append(matchingFilms(df_l, user, userinlist).__len__())
     return retarray
 
+
+# Public function that acts as complex constructor and returns:
+#   Output1 [df]: conversion of the CSV on a dataset
+#   Output2 [userlist]: list of the users on the same order as they appear on the dataset on its first occurence
+#   Output3 [rawarray]: matrix containing the coincident films between two users
+#   Output4 [countfilm]: matrix containing the number of coincident films between two users
+
 def DataSetBuilder():
     df = __readfile(ratingsfilename, numrows)
     rawarray = []
@@ -49,4 +57,5 @@ def DataSetBuilder():
     for user in __getAllUsers(df):
         rawarray.append(__matchingFilmsByUser(df, user))
         countfilm.append(__matchingCountFilmsByUser(df, user))
-    return df,__getAllUsers(df),rawarray,countfilm
+    userlist = __getAllUsers(df)
+    return df,userlist,rawarray,countfilm
