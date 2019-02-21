@@ -1,7 +1,7 @@
 # filmrecommender
 Another example code for recommendations based on distance algorithm for cheating in your Data Science homeworks
 
-This time using the amazing datasets of Kaggle: https://www.kaggle.com/c/movie/data, get the training_ratings_for_kaggle_comp.csv and the movies.dat
+Thanks again to datasets of Kaggle: https://www.kaggle.com/c/movie/data, get the training_ratings_for_kaggle_comp.csv and the movies.dat
 Paste it on your local environment
 
 For practising you have some parameters you can modify on the constant.py file:
