@@ -2,7 +2,8 @@ import pandas as pd
 import constant
 
 ratingsfilename=constant.RATING_FILE
-numrows = 500
+moviefilename=constant.MOVIE_FILE
+numrows = constant.NUM_OF_ROWS_RATING
 
 def __readfile(name, numrows):
     return pd.read_csv(name, nrows=numrows, index_col='id')
@@ -59,3 +60,6 @@ def DataSetBuilder():
         countfilm.append(__matchingCountFilmsByUser(df, user))
     userlist = __getAllUsers(df)
     return df,userlist,rawarray,countfilm
+
+def readmovies():
+    return pd.read_csv(moviefilename, index_col='id')
