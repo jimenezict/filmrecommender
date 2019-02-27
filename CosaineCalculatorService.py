@@ -14,5 +14,5 @@ def generalDistanceMatrix(allusers,n):
         for user2 in allusers:
             ##row.append(distanceExponential(n,user1,user2))
             ## TO BE IMPLEMENTED
-        matrix.append(row)
-    return(pd.DataFrame(matrix))
+            print("null")
+    return "null"

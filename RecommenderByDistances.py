@@ -11,7 +11,7 @@ class RecommendarByDistances:
         self.sourceratings, self.allusers, self.pandaarray, self.pandacountarray = dc.getRatingFile()
         if (constant.RECOMMENDER_TYPE == 'D'):
             self.distanceMatrix = dc.generalDistanceMatrix(self.allusers, n)
-        else if (constant.RECOMMENDER_TYPE == 'C'):
+        elif (constant.RECOMMENDER_TYPE == 'C'):
             print("To Be Implemented")
         else:
             print("Not valid type of recommender")
