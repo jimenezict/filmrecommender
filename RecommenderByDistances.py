@@ -8,11 +8,12 @@ class RecommendarByDistances:
 
     def __init__(self):
         n = constant.ELEVATED
-        self.sourceratings, self.allusers, self.pandaarray, self.pandacountarray = dc.getRatingFile()
         if (constant.RECOMMENDER_TYPE == 'D'):
+            self.sourceratings, self.allusers, self.pandaarray, self.pandacountarray = dc.getRatingFile()
             self.distanceMatrix = dc.generalDistanceMatrix(self.allusers, n)
         elif (constant.RECOMMENDER_TYPE == 'C'):
-            print("To Be Implemented")
+            self.sourceratings, self.allusers, self.pandaarray, self.pandacountarray = cc.getRatingFile()
+            self.distanceMatrix = cc.generalDistanceMatrix(self.allusers, n)
         else:
             print("Not valid type of recommender")
 

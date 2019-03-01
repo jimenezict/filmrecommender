@@ -7,6 +7,10 @@ allusers = []
 pandaarray  = []
 pandacountarray = []
 
+def getRatingFile():
+    df,allusers,pandaarray,pandacountarray = fr.DataSetBuilder()
+    return df,list(allusers),pandaarray,pandacountarray
+
 def generalDistanceMatrix(allusers,n):
     matrix = []
     for user1 in allusers:
