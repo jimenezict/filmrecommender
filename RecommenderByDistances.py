@@ -16,7 +16,7 @@ class RecommendarByDistances:
      #       self.distanceMatrix = cc.generalDistanceMatrix(self.allusers, n)
         else:
             print("Not valid type of recommender")
-
+#
     def __userpositionbyorder(self,pos):
         return self.allusers[pos]
 

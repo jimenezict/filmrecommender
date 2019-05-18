@@ -53,7 +53,3 @@ def generalDistanceMatrix(allusers,n):
             row.append(distanceExponential(n,user1,user2))
         matrix.append(row)
     return(pd.DataFrame(matrix))
-
-
-df,allusers,pandaarray,pandacountarray = getRatingFile()
-generalDistanceMatrix(allusers,10)
