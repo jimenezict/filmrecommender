@@ -2,7 +2,7 @@ import RecommenderByDistances as r
 import constant
 import pandas as pd
 
-#pmovies = pd.read_csv(constant.MOVIE_FILE, sep="::",names = ["movie", "title", "Tags"],index_col='movie')
+pmovies = pd.read_csv(constant.MOVIE_FILE, sep="::",names = ["movie", "title", "Tags"],index_col='movie')
 
 recommender = r.RecommendarByDistances()
 
