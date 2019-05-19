@@ -1,4 +1,5 @@
 import DistanceCalculatorService as dc
+import CosaineCalculatorService as cc
 import numpy as np
 import pandas as pd
 import constant
@@ -7,9 +8,15 @@ class RecommendarByDistances:
 
     def __init__(self):
         n = constant.ELEVATED
-        self.sourceratings, self.allusers, self.pandaarray, self.pandacountarray = dc.getRatingFile()
-        self.distanceMatrix = dc.generalDistanceMatrix(self.allusers, n)
-
+        if (constant.RECOMMENDER_TYPE == 'D'):
+            self.sourceratings, self.allusers, self.pandaarray, self.pandacountarray = dc.getRatingFile()
+            self.distanceMatrix = dc.generalDistanceMatrix(self.allusers, n)
+        elif (constant.RECOMMENDER_TYPE == 'C'):
+            self.sourceratings, self.allusers, self.pandaarray, self.pandacountarray = cc.getRatingFile()
+            self.distanceMatrix = cc.generalDistanceMatrix(self.allusers, self.sourceratings, self.pandaarray)
+        else:
+            print("Not valid type of recommender")
+#
     def __userpositionbyorder(self,pos):
         return self.allusers[pos]
 
